@@ -15,4 +15,5 @@ type infrastructureService struct {
 }
 
 func (srv infrastructureService) LocalDeploy(data types.WebData) types.LocalDeployment {
+	return types.LocalDeployment{":3002"}
 }

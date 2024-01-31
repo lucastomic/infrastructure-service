@@ -1,12 +1,16 @@
 package types
 
-import "mime/multipart"
+import (
+	"context"
+	"net/http"
+)
 
 type LocalDeployment struct {
 	Addr string
 }
 
 type WebData struct {
-	Name  string
-	Files []multipart.File
+	Name      string
+	FilesPath string
 }
+type APIFunc func(context.Context, http.ResponseWriter, *http.Request) error
