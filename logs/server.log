@@ -1,0 +1,6 @@
+time="2024-01-31T20:05:41+01:00" level=info msg="Service running in [:3001]" requestID="<nil>"
+time="2024-01-31T20:06:29+01:00" level=info msg="Service running in [:3001]" requestID="<nil>"
+time="2024-01-31T20:06:29+01:00" level=error msg="Service running in [:3001]" requestID="<nil>"
+time="2024-01-31T20:07:02+01:00" level=info msg="Service running in [:3001]" requestID="<nil>"
+time="2024-01-31T20:07:02+01:00" level=error msg="Error starting server: [listen tcp :3001: bind: address already in use]" requestID="<nil>"
+time="2024-01-31T20:07:20+01:00" level=info msg="Service running in [:3002]" requestID="<nil>"

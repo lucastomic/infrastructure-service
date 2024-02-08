@@ -1,19 +1,23 @@
 package infrastructure
 
 import (
+	"github.com/lucastomic/infrastructure-/internal/domain"
 	"github.com/lucastomic/infrastructure-/internal/logging"
-	"github.com/lucastomic/infrastructure-/internal/types"
 )
 
 type InfrastructureService interface {
 	// LocalDeploy takes the files of a generated WEB and deploys them in the local environment
-	LocalDeploy(data types.WebData) types.LocalDeployment
+	LocalDeploy(data domain.WebData) domain.LocalDeployment
 }
 
 type infrastructureService struct {
 	logger logging.Logger
 }
 
-func (srv infrastructureService) LocalDeploy(data types.WebData) types.LocalDeployment {
-	return types.LocalDeployment{":3002"}
+func New(l logging.Logger) InfrastructureService {
+	return infrastructureService{l}
+}
+
+func (srv infrastructureService) LocalDeploy(data domain.WebData) domain.LocalDeployment {
+	return domain.LocalDeployment{":3002"}
 }
