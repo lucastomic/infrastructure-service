@@ -1,6 +1,7 @@
 package domain
 
 import (
+	"archive/zip"
 	"context"
 	"net/http"
 )
@@ -11,6 +12,6 @@ type LocalDeployment struct {
 
 type WebData struct {
 	Name      string
-	FilesPath string
+	FilesPath *zip.Reader
 }
 type APIFunc func(context.Context, http.ResponseWriter, *http.Request) error
