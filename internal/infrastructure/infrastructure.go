@@ -7,7 +7,7 @@ import (
 
 type InfrastructureService interface {
 	// LocalDeploy takes the files of a generated WEB and deploys them in the local environment
-	LocalDeploy(data domain.WebData) domain.LocalDeployment
+	LocalDeploy(data domain.WebData) (domain.LocalDeployment, error)
 }
 
 type infrastructureService struct {
@@ -18,6 +18,6 @@ func New(l logging.Logger) InfrastructureService {
 	return infrastructureService{l}
 }
 
-func (srv infrastructureService) LocalDeploy(data domain.WebData) domain.LocalDeployment {
-	return domain.LocalDeployment{":3002"}
+func (srv infrastructureService) LocalDeploy(data domain.WebData) (domain.LocalDeployment, error) {
+	return domain.LocalDeployment{":3002"}, nil
 }
